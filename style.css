@@ -29,9 +29,11 @@ audio {
     0% {
         background-position: 0% 50%;
     }
+
     50% {
         background-position: 100% 50%;
     }
+
     100% {
         background-position: 0% 50%;
     }
@@ -61,6 +63,7 @@ audio {
         opacity: 1;
         transform: translateY(-100px) rotate(0deg);
     }
+
     100% {
         opacity: 0;
         transform: translateY(600px) rotate(360deg);
@@ -80,4 +83,59 @@ audio {
     text-align: center;
     font-size: 24px;
     font-family: 'Arial', sans-serif;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .rainbow-border {
+        padding: 10px;
+    }
+
+    #win-message {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .rainbow-border {
+        padding: 8px;
+    }
+
+    .hongbao {
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .envelope {
+        margin-bottom: 20px;
+    }
+
+    .rainbow-border {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
