@@ -1,4 +1,6 @@
 body {
+    background-color: rgb(159, 44, 44);
+    color: white;
     display: flex;
     justify-content: center;
 }
@@ -76,7 +78,7 @@ audio {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: #fff;
+    background: rgb(159, 44, 44);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
