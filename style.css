@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    height: 180px;
+}
+
+audio {
+    margin-top: 20px;
+}
+
+.envelope {
+    margin: 24px;
+    text-align: center;
+}
+
+.rainbow-border {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 300% 300%;
+    animation: rainbow 3s linear infinite;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.hongbao {
+    height: 400px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hongbao:hover {
+    transform: scale(1.1);
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background-color: #ffcc00;
+    animation: fall 2s ease-in-out forwards;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    0% {
+        opacity: 1;
+        transform: translateY(-100px) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(600px) rotate(360deg);
+    }
+}
+
+#win-message {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+}

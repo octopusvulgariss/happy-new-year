@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <h1>恭贺新禧!!!</h1>
+        <p>愿新的一年里，身体健康，事业有成，家庭幸福，财源广进！<br> 愿每一天都充满笑容与喜悦，阖家团圆，平安顺遂 :)</p>
+        <div><img src="/img/kazuha.png" alt="Kazuha happy"></div>
+        <audio controls>
+            <source src="audio/gongxigongxi.mp4" type="audio/mp3">
+        </audio>
+    </div>
+
+    <div class="envelope">
+        <div class="rainbow-border">
+            <a href="#" id="hongbao"><img src="img/hongbao" alt="Hongbao" class="hongbao"></a>
+        </div>
+        <p>Click to open!</p>
+    </div>
+
+    <div id="win-message">
+        You won $20,000 dollars, pookie!
+        <div>
+            <img src="img/shogun.png" alt="Shogun">
+        </div>
+        <p style="font-size: 0.7em;">Your password is <strong>Serpente</strong>!</p>
+    </div>
+
+    <script>
+        const hongbao = document.getElementById('hongbao');
+        const winMessage = document.getElementById('win-message');
+
+        function createConfetti() {
+            const confettiCount = 300; 
+            const duration = 7000; 
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+
+                const size = Math.random() * 8 + 4; 
+                const left = Math.random() * 100; 
+                const rotation = Math.random() * 360; 
+                const color = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                const delay = Math.random() * 2; 
+                const fallDuration = Math.random() * 2 + 3;
+
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.left = `${left}vw`;
+                confetti.style.backgroundColor = color;
+                confetti.style.transform = `rotate(${rotation}deg)`;
+                confetti.style.animationDelay = `${delay}s`;
+                confetti.style.animationDuration = `${fallDuration}s`;
+
+                document.body.appendChild(confetti);
+
+                setTimeout(() => confetti.remove(), (delay + fallDuration) * 1000);
+            }
+        }
+
+        hongbao.addEventListener('click', (e) => {
+            e.preventDefault();
+            createConfetti();
+            winMessage.style.display = 'block';
+            setTimeout(() => {
+                winMessage.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+
+</html>
